@@ -28,6 +28,14 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            minifyEnabled(false)
+            isTestCoverageEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
         getByName("release") {
             minifyEnabled(false)
             proguardFiles(
